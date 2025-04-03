@@ -29,7 +29,7 @@ classDiagram
     }
 
     class Program {
-        +static void Main(string[] args)
+        +static void Main()
     }
 
     Color <-- Sphere : uses
