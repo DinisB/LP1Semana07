@@ -33,5 +33,6 @@ classDiagram
     }
 
     Color <-- Sphere : uses
+    
     Sphere <-- Program : uses
 ```
