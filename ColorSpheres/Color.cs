@@ -4,6 +4,8 @@ namespace ColorSpheres
 {
     class Color
     {
+        private const int MinColorValue = 0;
+        private const int MaxColorValue = 255;
         private readonly int red;
         private readonly int green;
         private readonly int blue;
@@ -17,10 +19,10 @@ namespace ColorSpheres
             this.alpha = CheckColors(alpha);
         }
 
-        public Color(int red, int green, int blue) : this(red, green, blue, 255) { }
+        public Color(int red, int green, int blue) : this(red, green, blue, MaxColorValue) { }
         private int CheckColors(int value)
         {
-            return Math.Clamp(value, 0, 255);
+            return Math.Clamp(value, MinColorValue, MaxColorValue);
         }
 
         public int GetRed() => red;
