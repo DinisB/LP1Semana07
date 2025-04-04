@@ -8,7 +8,8 @@ namespace MyRPG
         private float health;
         public string Name { get; }
 
-        public int XP{
+        public int XP
+        {
             get => xp;
             set
             {
@@ -23,17 +24,19 @@ namespace MyRPG
         {
             get
             {
-                return (int) 1 + xp / 1000;
+                return (int)1 + xp / 1000;
             }
         }
 
         public float Health
         {
-            get {
+            get
+            {
                 return Math.Clamp(health, 0, MaxHealth);
             }
-            set {
-                health = Math.Clamp(value, 0, MaxHealth);;
+            set
+            {
+                health = Math.Clamp(value, 0, MaxHealth); ;
             }
         }
 
@@ -41,13 +44,14 @@ namespace MyRPG
         {
             get
             {
-                return (float) 100 + (Level - 1) * 20;
+                return (float)100 + (Level - 1) * 20;
             }
         }
 
-        public void TakeDamage(float damage) {
+        public void TakeDamage(float damage)
+        {
             Health -= damage;
-            XP = (int) damage/20;
+            XP = (int)damage / 20;
         }
 
         public Player(string name)
