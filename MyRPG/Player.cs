@@ -18,5 +18,28 @@ namespace MyRPG
                 }
             }
         }
+
+        public int Level
+        {
+            get
+            {
+                return (int) 1 + xp / 1000;
+            }
+        }
+
+        public float MaxHealth
+        {
+            get
+            {
+                return (float) 100 + (Level - 1) * 20;
+            }
+        }
+
+        public float Health
+        {
+            get {
+                return Math.Clamp(health, 0, MaxHealth);
+            }
+        }
     }
 }
