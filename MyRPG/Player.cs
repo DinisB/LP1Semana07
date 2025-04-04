@@ -27,6 +27,16 @@ namespace MyRPG
             }
         }
 
+        public float Health
+        {
+            get {
+                return Math.Clamp(health, 0, MaxHealth);
+            }
+            set {
+                health = Math.Clamp(value, 0, MaxHealth);;
+            }
+        }
+
         public float MaxHealth
         {
             get
@@ -35,11 +45,16 @@ namespace MyRPG
             }
         }
 
-        public float Health
+        public void TakeDamage(float damage) {
+            Health -= damage;
+            XP = (int) damage/20;
+        }
+
+        public Player(string name)
         {
-            get {
-                return Math.Clamp(health, 0, MaxHealth);
-            }
+            Name = name;
+            xp = 0;
+            Health = MaxHealth;
         }
     }
 }
